@@ -1,5 +1,6 @@
 # Learning_Python
-This is a repository of projects I complete while learning Python programming
+This is a repository of projects I complete while learning Python programming.
+Any programs I save to this repository will have an abbreviation code added on to the program name to indicate what source the program came from. These abbreviation codes are found in parentheses at the end of each source found below. 
 
 I will be learning from the following books:
 1) Learning Python 3 The Hard Way, Zed A. Shaw (LPTHW)
@@ -7,6 +8,10 @@ I will be learning from the following books:
 3) Automate The Boring Stuff With Python, Al Sweigart (ATBSWP)
 4) Beyond The Basic Stuff With Python, Al Sweigart (BTBSWP)
 5) Real World Python, Lee Vaughan (RWP)
+
+I will be using these books and flash cards for reference:
+1) Python Pocket Reference, Mark Lutz
+2) Python Flash Cards, Eric Matthes
 
 I will be learning from the following Udemy courses:
 1) The Python Mega Course, Ardit Sulce (TPMC)
