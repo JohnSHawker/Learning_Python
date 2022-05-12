@@ -1,0 +1,112 @@
+1. Yondu Udonta - Description
+
+
+Problem
+
+
+Expected duration: 2-3 hours
+
+
+Yondu Udonta and his crew of space pirates arrive at the Iron Lotus after several weeks of plundering the high seas. Since the crew has been in space for nearly six months,
+they are ready for a night of celebration. Yondu doesn’t want to divvy up the plunder just yet, so he gives each crew member other than himself and Peter Quill 3 units and
+sends them off to the Iron Lotus. (We’re keeping the units simple for purposes of the problem, even though 1 unit is about $2.33.) After the crew has gone, he and Peter count
+what’s left and decide how to split it up among the crew. Yondu takes 13% plunder, which he transfers to a hidden bank account. Yondu gives Peter 11% of the remaining units,
+which Peter transfers to his account. The next morning, the remaining units are divided evenly among all of the crew, including Yondu and Quill. Little do they know that Yondu
+and Quill have already taken a cut. If the remaining treasure can’t be split evenly, the units left over are given to the Reaver’s Benevolent Fund (RBF).
+
+
+The problem is to compute how many units each person gets and how how much goes to the RBF. A unit cannot be split, so if some calculation yields a number that contains a
+fractional part, you can only give that person the integer part of the value. For example, if your program computed the captain’s share as 25.67 units, you could only give him
+25 units, not 25.67 units. Warning: Always round down, NOT up. Simply drop the fractional part, but don’t lose any units from the overall total amount.
+
+
+It should ask a user for two pieces of information:
+
+- How many units the Reavers came into port with, and
+
+- How many pirates are on the ship, including Yondu and Quill
+
+The program should then split the units and print out
+
+- Yondu’s share
+
+- Peter’s share
+
+- The Crew share
+
+- RBF Amount
+
+
+Here’s an example interaction showing user input and output:
+
+How many Reavers:
+20
+How many units:
+1000
+Yondu's share: 158
+Peter's share: 126
+Crew: 36
+RBF: 14
+
+Do not count the 3 coins each crew took into town as part of their total share, since they already spent them. Of course, you have to count those coins when you check your totals
+for correctness versus the total.
+
+Starter Code
+You are given the starter code in the file yondu.py. You must use this file. Add code and comments in the places indicated. Do not change the other parts that have been given, and
+do not worry if you don’t fully understand all of the code now, because you will later. You’ll notice that there are test cases for the code that has been given. By intent, if you
+do mess up certain parts of the code, your program won’t pass those cases.
+
+
+Grading
+
+Late submissions earn 50 points and no feedback.
+
+0-20 points: design doc is correct and complete (separate assignment)
+
+21-100 points: all automated and manual test cases pass
+
+
+Rubric
+(10 points) 20 reavers with 1000 units gives 54 shore leave, Yondu 158, Peter 126, each crew 36, and RBF 14.
+(10 points) input some numbers you are not told
+(10 points) If user enters anything other than positive integers for reavers and units, print “Enter only positive integers for reavers and units.” and exit.
+(10 points) If the number of reavers is less than 3, print “Not enough crew.” and exit.
+(10 points) If the number of units is less than or equal to 3 times the number of reavers, print “Not enough units.” and exit.
+(10 points) Code has a main function with conditional execution. All code is contained within a function.
+(7 points) File has a module docstring with required information in it.
+(6 points) Code follows PEP8 Python Style guide for code style
+(7 points) The style checker (pylint with a custom configuration) emits no warnings.
+
+
+Strategies For Success
+Solve the problem using pencil and paper first. Good programmers figured out how to solve a problem before they write the code. This first step is best done collaboratively
+with another student or in a study group. Once the discussion turns to Python specifics and actually writing code, you must write your own code, not share someone else’s.
+Store a copy of your file on Google Drive, Box, or another private cloud repository where you can retrieve it if needed.
+Good programmers use a strategy called stepwise refinement to write code
+a. Write a simple working version of the program as a first cut-for example, write a program that calculates a percentage of an amount.
+b. Run the program and fix any errors.
+c. Edit the program to add new capabilities.
+d. Test the code with the new changes.
+e. Go back to step b) until done.
+Start on the project well before the due date so you have time to deal with problems and questions that arise. You need time to succeed.
+Before you submit the final version, verify that it is complete and test with different inputs to make sure it is correct.
+
+
+Frequently Asked Questions
+
+Q: Do I have to use the starter code you provided for this project?
+A: You should use it because 1) it gives you an idea how to structure your code for this project and the future; 2) it gives you a peek at some techniques for programming that
+we will be studying in more detail later. 3) Some test cases check that you added code without breaking the code that was given.
+
+Q: What does it mean to round down instead of rounding up?
+A: When you do division or multiply by a percentage, you get a floating point number. Rounding down means you drop the fractional part and just keep the whole number. Since
+galactic units are whole numbers, you’ll get incorrect amounts if you don’t use integer arithmetic properly.
+
+Q: When I add up all the amounts from the example, the total doesn’t add up to 2000. What’s wrong?
+A: Well, did you correctly compute shore leave money? Yondu and Peter don’t get any. Yondu’s and Peter’s total amount DO include crew share, though, so don’t double count them
+in the total.
+
+Q: Why should I care about integer arithmetic in my code?
+A: Most real numbers (floating point numbers) can’t be stored exactly in a computer in decimal form; they have to be approximated. This can sometimes lead to inaccurate or
+strange, inconsistent results, depending on what problem is being solved and how much precision you need. This isn’t a "Python Problem", it’s a more general problem with
+computers. For many problems, this is not an issue, but we want you to be aware of it.
