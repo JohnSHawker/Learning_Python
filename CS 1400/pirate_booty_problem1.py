@@ -16,8 +16,12 @@ def main():
     reaver_amount(reavers)
     units = int(input('How many units did the reavers come to port with? '))
     yondus = yondu_cut(units)
+    peters = peter_cut(units)
+    crew_leave = shore_leave(reavers)
     # print statement used for debugging only
     print(int(yondus))
+    print(int(peters))
+    print(int(crew_leave))
     
   
 def reaver_amount(reavers):
@@ -38,6 +42,24 @@ def yondu_cut(total):
     '''
     yondus = total * 0.13
     return yondus
+
+def peter_cut(total):
+    '''Calculates the total amount
+    Peter gets before splitting the shares 
+    among the group og reavers
+    '''
+    peters = total * 0.11
+    return peters
+
+def shore_leave(crew):
+    '''Calculates the amount
+    the remaining crew "spends" on 
+    shore leave, or the 3 units per crew
+    excluding Yondu and Peter.
+    '''
+    crew_leave = (crew - 2) * 3
+    return crew_leave
+
 
 '''The below code can be ignored as it was notes on how to
 do the math required for the problem overall. 
