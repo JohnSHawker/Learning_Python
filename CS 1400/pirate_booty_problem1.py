@@ -22,10 +22,10 @@ screw em! \nBut also be the benevolent Captain that you are!')
     reaver_amount(reavers)
     units = int(input('How many units did the reavers come to port with? '))
     crew_leave = shore_leave(reavers)
-    peters = peter_cut(units, crew_leave)
     yondus = yondu_cut(units, crew_leave)
+    peters = peter_cut(units, crew_leave, yondus)
     everyones_cut = crews_cut(reavers, units, yondus, peters, crew_leave)
-    rbf = RBF(reavers, units, yondus, peters, crew_leave)
+    rbf = RBF(reavers, units, yondus, peters, crew_leave, everyones_cut)
     yondu_final = yondu_total(yondus, everyones_cut)
     peter_final = peter_total(peters, everyones_cut)
 
@@ -34,19 +34,13 @@ screw em! \nBut also be the benevolent Captain that you are!')
     peter_dollar = dollar_amount(peter_final)
     crew_cash = dollar_amount(everyones_cut)
 
-    # print statement used for debugging only
-    # print(int(yondus))
-    # print(int(peters))
-    # print(int(crew_leave))
-    # print(int(everyones_cut))
-    # print(int(rbf))
 
     #Prints the result of the everyone's cut
     print('Yondu had the final amount of: ', yondu_final)
     print('Peter had the final amount of: ', peter_final)
     print(f'Crew: {everyones_cut}')
     print(f'RBF: {rbf}')
-
+    print('')
     #For fun I added the US dollar earnings based off the .txt document
     print("Everyone's final cut based on the US dollar")
     print(f"Yondu's dollar amount: ${yon_dol:.2f}")
@@ -69,15 +63,15 @@ def yondu_cut(total, crew_leave):
     Yondu gets before splitting the shares
     among the group of reavers.
     '''
-    yondus = (total - crew_leave) * 0.13
+    yondus = math.floor((total - crew_leave) * 0.13)
     return yondus
 
-def peter_cut(total, crew_leave):
+def peter_cut(total, crew_leave, yondus):
     '''Calculates the total amount
     Peter gets before splitting the shares 
     among the group og reavers
     '''
-    peters = (total - crew_leave) * 0.11
+    peters = math.floor((total - crew_leave - yondus) * 0.11)
     return peters
 
 def shore_leave(crew):
@@ -97,17 +91,17 @@ def crews_cut(
     after the bonuses have been taken out.
     '''
     cut = (units - yondus - peters - crew_leave) // reavers
-    return int(cut)
+    return (cut)
 
 def RBF(
     reavers, units, yondus, 
-    peters, crew_leave):
+    peters, crew_leave, cut):
     '''Calculates the remainder amount that
     doesn't split evenly among the crew and 
     puts that remainder in the RBF fund(charity).
     '''
-    rbf = (units - yondus - peters - crew_leave) % reavers
-    return int(rbf)
+    rbf = units - yondus - peters - crew_leave - (cut * reavers)
+    return (rbf)
 
 def yondu_total(bonus, cut):
     '''Calculates Yondu's total amount
@@ -115,7 +109,7 @@ def yondu_total(bonus, cut):
     percentage.
     '''
     yondu_final = bonus + cut
-    return math.floor(int(yondu_final))
+    return yondu_final
 
 def peter_total(bonus, cut):
     '''Calculates Peter's total amount
@@ -123,9 +117,12 @@ def peter_total(bonus, cut):
     percentage.
     '''
     peter_final = bonus + cut
-    return math.floor(int(peter_final))
+    return peter_final
 
 def dollar_amount(units):
+    '''Calculates US dollar amount
+    of each individuals cut
+    '''
     dollars = units * 2.33
     return dollars
 
