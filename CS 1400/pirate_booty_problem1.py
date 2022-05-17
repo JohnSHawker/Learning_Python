@@ -5,6 +5,7 @@ bonus. After the remainder is divided up evenly among all crew members including
 if there is any remainder then it is put into a charity fund.
 The user inputs the wage amount as an interger and how many members of the crew there are, if 
 the user inputs less than 3 work crew the program needs to quit.
+Author: Kameron Squire
 '''
 # Import math for the math.floor() function to round down to the next full integer
 import math
@@ -21,6 +22,7 @@ screw em! \nBut also be the benevolent Captain that you are!')
     reavers = int(input('How many reavers are there including (Yours truly!)Yondu and Peter in total? '))
     reaver_amount(reavers)
     units = int(input('How many units did the reavers come to port with? '))
+    check = unit_check(units, reavers)
     crew_leave = shore_leave(reavers)
     yondus = yondu_cut(units, crew_leave)
     peters = peter_cut(units, crew_leave, yondus)
@@ -41,6 +43,7 @@ screw em! \nBut also be the benevolent Captain that you are!')
     print(f'Crew: {everyones_cut}')
     print(f'RBF: {rbf}')
     print('')
+
     #For fun I added the US dollar earnings based off the .txt document
     print("Everyone's final cut based on the US dollar")
     print(f"Yondu's dollar amount: ${yon_dol:.2f}")
@@ -52,7 +55,7 @@ def reaver_amount(reavers):
     there are more than 3 reavers
     '''  
 
-    if reavers < 3:
+    if reavers <= 3:
         print('You do not have enough reavers.')
         quit()
     else:
@@ -100,7 +103,7 @@ def RBF(
     doesn't split evenly among the crew and 
     puts that remainder in the RBF fund(charity).
     '''
-    rbf = units - yondus - peters - crew_leave - (cut * reavers)
+    rbf = math.ceil(units - yondus - peters - crew_leave - (cut * reavers))
     return (rbf)
 
 def yondu_total(bonus, cut):
@@ -125,6 +128,18 @@ def dollar_amount(units):
     '''
     dollars = units * 2.33
     return dollars
+
+def unit_check(units, reavers):
+    '''Checks to make sure that units
+    and reavers entered are a positive integer.
+    Also checks to make sure there are enough
+    units to divide among the crew.
+    '''
+    if units <= reavers * 3:
+        print('Not enough units.')
+        quit()
+    else:
+        pass
 
 
 if __name__ == '__main__':
