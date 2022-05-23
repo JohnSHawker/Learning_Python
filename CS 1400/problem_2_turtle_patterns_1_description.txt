@@ -25,6 +25,10 @@ The Python turtle graphics documentation can be found here (https://docs.python.
 Keep in mind that you will revisit this code later for Project 6, but don’t get hung up on that, and save any advanced features for Project 6–don’t do them for this
 project.
 
+# I found these youtube videos helpful: (https://youtube.com/playlist?list=PLzMcBGfZo4-kfGgYZb9dwW3VhoBRG0h9c)
+# I found this forum helpful because my turtle window would close automatically: 
+# (https://stackoverflow.com/questions/6234798/turtle-graphics-how-do-i-control-when-the-window-closes)
+
 Logistics
 
 Starter Code
