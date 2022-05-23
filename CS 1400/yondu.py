@@ -1,11 +1,10 @@
 '''
-Project Name: 
-Author: 
-Due Date: MM/DD/YYYY
-Course: CS1400-zzz
+Project Name: yondu.py
+Author: John Hawker
+Due Date: 05/22/2022
+Course: CS1400-X01
 
-Put your description here, lessons learned here, and any other information someone using your
-program would need to know to make it run.
+This program will calulate the cuts every reaver will get based off of the number of reavers and the number of units.
 '''
 
 def main():
@@ -14,7 +13,9 @@ def main():
     '''
     try:
         # (1) replace pass with your code
-        pass
+        reavers = int(input("How many reavers are there incuding Yondu and Peter?"))
+        units = int(input("How many units did they come into port with?"))
+
     except ValueError:
         print("Enter positive integers for reavers and units.")
         return
@@ -32,7 +33,18 @@ def main():
         return
 
     # (2) replace pass with your code
-    pass
+    number_of_pirates_going_out = reavers - 2
+    number_of_units_to_go_out = number_of_pirates_going_out * 3
+    number_of_units_after_port_cut = units - number_of_units_to_go_out
+    yondu_percent = number_of_units_after_port_cut // (1 / 0.13)
+    quill_percent = (number_of_units_after_port_cut - yondu_percent) // (1 / 0.11)
+    number_of_units_to_split_per_crew_member = (number_of_units_after_port_cut - yondu_percent - quill_percent) // reavers
+    rbf = number_of_units_after_port_cut - yondu_percent - quill_percent - (number_of_units_to_split_per_crew_member * reavers)
+    
+    print("Yondu's share: ", int(yondu_percent + number_of_units_to_split_per_crew_member))
+    print("Peter's share: ", int(quill_percent + number_of_units_to_split_per_crew_member))
+    print("Crew: ", int(number_of_units_to_split_per_crew_member))
+    print("RBF: ", int(rbf))
 
 if __name__ == "__main__":
     main()
