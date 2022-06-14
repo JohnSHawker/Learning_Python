@@ -63,6 +63,7 @@ Write a function in rabbits.py named do_research that does the following:
 The output file should look like the following. Comments in the file begin with #, and must appear as shown:
 
 # Table of rabbit pairs
+
 Month, Adults, Babies, Total
 1, 1, 0, 1
 2, 1, 1, 2
