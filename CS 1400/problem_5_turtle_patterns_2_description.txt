@@ -1,0 +1,103 @@
+Expected Duration: 3-4 hours
+
+Problem
+-----
+This project assumes that Project Turtle Landscape or Scene I (P2) is complete and uses it as a starting point.
+That means for this project you should make a copy of your code for that project and modify it.
+
+Earlier in the semester we learned how to run Python programs from the terminal window and provide command line
+parameters to the program. Whereas P2 required only basic shapes, for this project you will compose complex,
+compound shapes. You will also learn to use scaling factors to draw shapes and scenes of different sizes more
+easily, and to embed a smaller scene within a larger scene.
+
+Your program should take one command-line parameter (i.e., via sys.argv) that alters some aspect of the drawing.
+For example, use a number that determines whether to draw a morning scene, afternoon scene or evening scene.
+
+If you need inspiration, search with the terms “python turtle scene” and click images. Do not copy code from
+anyone else, including internet sources, though you may look at code for ideas. You may use any code provided in
+your book. Here (https://ucsb-cs8-m17.github.io/lab/lab05/) is one example of an approved resource. They give you
+an idea, some skeleton code, some test code,and a little bit of example code to use, but you have to do the real
+thinking and the developing work. As always, if you are unsure about some resource, you can ask the instructor for
+approval. Here is a link to the turtle graphics documentation (https://docs.python.org/3/library/turtle.html).
+
+Embedding One Scene Inside Another
+-----
+We all seen pictures where inside one picture is a smaller version of another picture or the same picture to
+infinity. Algorithmically, the best way to think about that problem is in terms of size, position and orientation.
+The normal-size scene has a particular size, starting position and orientation (horizontal, let’s say). The smaller
+version is the same thing, but with a different size, starting position and possibly orientation. This leads us to
+think about size, position and orientation as parameters of drawing a scene, where the parameters can change. The
+trick is to think about how you want to make a turtle draw something at the expected position, size and orientation.
+
+For this project, you can draw the same scene inside your normal scene, or a different scene inside the normal scene.
+
+Tilt
+-----
+This section should be review from the previous project.
+Tilt is easier than most people think, especially with turtles. A turtle always has a heading. Manipulating tilt means
+changing the heading of the turtle before you draw something. One way make this easy in your turtle program is to make
+the code for drawing something that is tilt-able independent of the turtle’s heading. Much like size, there are two ways
+of making tilt happen: you can change the direction of the turtle outside a function that draws it, or you can pass a
+parameter to the function and change the heading there. Which way you do it is up to you, as long as it’s easy to change
+the tilt value.
+
+Logistics
+
+Grading
+-----
+0-20 points: design doc is correct and complete
+21-100: all automated and manual tests pass
+
+Rubric:
+Below “scene” means a scene or landscape.
+
+Manual tests (53 points)
+
+(6 points) The scene includes several shapes and colors, and is recognizable.
+(6 points) The scene includes at least 3 different atomic shapes.
+(6 points) The program uses a combination of your atomic shapes to construct at least 2 different types of objects for
+your scene.
+(6 points) The program uses functions you write to draw your shapes. It may, of course, use turtle shapes, etc.
+(6 points) The program uses loops for repeated code.
+(6 points) The program demonstrates that you can scale the same shape easily.
+(6 points) The scene demonstrates that you can scale a scene as well–has a scene within a scene.
+(6 points) The program takes one command line parameter, which alters the scene in some way.
+(5 points) If the user enters incorrect parameters on the command line, the program prints a usage message and exits.
+
+Automatic Tests (27 points)
+
+(6 points) The program has a main function with conditional execution. There are no global variables.
+(6 points) The program has a module docstring with required information in it, including which values to enter on the
+command line in order to run this program.
+(5 points) Every function has a proper function docstring.
+(5 points) The program uses snake case for variable names.
+(5 points) The style checker emits no warnings.
+
+Frequently Asked Questions?
+Q: How do I scale an entire scene?
+A: Everything you draw has size and dimensions. To make something “smaller” you use smaller sizes. To make it bigger you
+use bigger sizes. When you scale a group of objects together, you have to scale distances between things as well as sizes.
+
+Q: How do I use a scaling factor?
+A: Consider this. In "the old days", the only random number generators we had would generate random numbers between 0 and 1.
+But what if I want a number between 0 and 9 instead? I would generate a number x and then multiply it by 10. What if I want
+a number between 0 and 49? I would multiply it by 50 instead. Here 10 and 50 are scaling factors.
+
+Q: How can I put one scene inside another?
+A: As mentioned above, we’ve all seen pictures where the same picture is drawn smaller inside a picture. There are 2 main
+parts to drawing a small scene: scaling (see question above) and location. When we draw something in the turtle window at a
+particular location, we often assume the coordinates are relative to 0,0. But things can be drawn relative to another reference
+point as well, like the upper left corner of a bounding box (rectangle) in a drawing. This is what you assume already when you
+give the turtle a command like forward(50) or right(90)–it’s relative to where the turtle is, not using the absolute position
+or the absolute angle from 0.
+
+Q: Does this project have to be different from Turtle Patterns I or can I use that one?
+A: It’s usually less work if you modify and add on to your Turtle Patterns I project, but you can do something completely
+different if you want.
+
+Q: Does it have to be a scene or a landscape, or can I draw something else entirely?
+A: It does not have to be a scene or a landscape as long as your result satisfies the test cases listed under grading, which
+are the same as the rubric. Keep in mind though that drawing a shape or pattern “smaller” does not necessarily qualify as
+drawing a scene smaller.
+If it’s not clear how you are doing that, you’d have to explain in your comments how your code satisfies that test case, for
+example.
