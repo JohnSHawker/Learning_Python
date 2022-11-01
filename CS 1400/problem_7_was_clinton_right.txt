@@ -1,0 +1,86 @@
+ 
+step 1) open file .csv  with open("filename", "r") as "nickname":
+step 2) read the file "nickname.readlines()
+or for line in nickname:
+    print(line)
+or nickname.readline()
+    print(line)
+step 3) manipulate data value.strip().split() 'will create a list that is editable'
+
+
+1. Was Clinton Right? - Description
+Expected Duration: 5-8 hours
+Problem
+Former President Bill Clinton said in his speech to the Democratic National Convention in Charlotte in 2012:
+“Since 1961, for 52 years now, the Republicans have held the White House 28 years, the Democrats 24. In those 52 years, our private economy has produced 66 million private-sector jobs. So what’s the jobs score? Republicans 24 million, Democrats 42 (million).”
+In the packed convention hall, it was one of the night’s biggest applause lines.
+Did he have his facts right? Your project is to convince the grader whether Clinton was right or wrong.
+We provide you a formatted copy of the file BLS_private.csv which is a download from the from the Bureau of Labor Statistics (bls.gov). Data in the file are in thousands. Clinton probably got his data from an article on bloomberg.com that is no longer publicly available. Bloomberg’s writer got their data from the Bureau of Labor Statistics (bls.gov) at the U.S. Department of Labor—the definitive, non-partisan source of jobs data. In the quote above you can see that he refers to private employment data, “seasonally adjusted”. The data can be found here if you check the box “Total Private Employment.” You then need to select the years starting in 1961 up to 2012. The result is an MS Excel file that can be saved in comma-separated values format (csv). You should verify that we are providing you the correct data.
+You need data on the presidents in the specified time period so that you can check Clinton’s statement. What data do you need? Part of your task is to figure out what data you need. You will have to research the presidents to gather data and store it in a file that you create called presidents.txt. Your presidents.txt file cannot have any jobs data in it-all jobs data must come from the BLS_private.csv file. Your presidents.txt file will simply be a file of words and numbers that you can create using a simple text editor or Excel.
+Your task is to analyze and synthesize the input from the BLS_private.csv and your presidents.txt file to see if you can verify or discredit Clinton’s statement.
+There are a number of implicit challenges such as “What does Clinton mean by 'produced’?” and other ideas open for interpretation.
+You may ask what output we expect from your program. That is purposefully unspecified–you decide what is the most effective way to make your point. You need enough output to show that YOU have verified or discredited Clinton’s assertion. Simply saying “verified” (or not) is not sufficient: justify your assertion. Simply quoting other articles will earn you 0 points, regardless of effort. Your code, your comments, and your output need to convince the grader that YOU solved the problem with understandable code that answered the question being asked.
+Logistics
+This project may not be turned in late.
+0-20 points: design doc is correct and complete
+21-100: all automated and manual tests pass
+bonus points: up to 10
+Files
+You will write and/or modify several files as part of this project:
+BLS_private.csv contains the provided data. You may modify this file. If you ever need the original, you can find it on Canvas.
+presidents.txt should contain information that your analysis can use about presidents. This file must not contain jobs data!
+fact_check.py will contain relevant python code. Use it to conduct analyses of the data. It may print results to the terminal or to conclusions.md.
+conclusions.md should contain your answers (in prose!) to the questions. You may enter plain text or (optionally) use markdown formatting. You may write the contents of this file manually or programmatically.
+The provided BLS csv data file is cleaned up, and should be straightforward to use with any of the various python modules you might consider using.
+You choose which data structures you want to use in analyzing your data-that is not specified for you. However, we do not expect you to use classes.
+Note that two presidents did not complete their terms and that may change the numbers a bit. A correction might affect the results.
+Rubric
+Manually graded
+(5 points) Labor data used as input is correct and complete
+(5 points) Give results for democratic presidents
+(5 points) Give results for republican presidents
+(7 points) Give a clear conclusion that answers the question being asked
+(7 points) Results are correct given assumptions made
+(8 points) Conclusion drawn is reasonable given assumptions made
+(8 points) The correct answer is given (yes, there is one).
+(5 points) presidents.txt file contains no labor data, only data about presidents
+(5 points) There is a module docstring with the required information, including exactly how to run this program.
+(5 points) The program validates inputs and fails gracefully when necessary.
+Automatically graded
+(5 points) Code has a main function with conditional execution. There is no global code.
+(5 points) Every function has a proper function docstring.
+(5 points) Variables are named with snake case.
+(5 points) The program passes the style checker with no warnings.
+Bonus Questions
+As the saying goes, “There are three kinds of lies: lies, damned lies, and statistics.” (attribution is complicated). Simply having correct data doesn’t mean that you are telling the correct story, and that could apply to Clinton’s quote. In what ways is this the wrong data for the context in which it was being used? How could the numbers be adjusted to better reflect the influence that a president has on this data?
+Answer these questions for bonus points.
+Frequently Asked Questions
+Q: What does it mean that this project is also the final exam?
+A: It means that it counts in your course grade as a project grade and as the score for the final exam.
+Q: Is exam 2 the final exam?
+A: No. Exam 2 is not the final exam, this project is.
+Q: Since this is an exam, can we help each other like we have done on the other projects? Can we get help from
+our instructor or the Lab TAs?
+A: You can ask clarifying questions, but do not expect as much help as on other projects. We want to see what you yourself know and can do.
+Q: Why is this project double-counted in our course grade?
+A: The temptation is, if your grade is “good enough” to simply not do the final project, under pressure from other classes. You might still choose
+not to do it, but that’s really a shame since at the end of the semester is when you have the most knowledge and skill.
+Q: Who creates the presidents.txt file? What format is it?
+A: You create it. It’s a simple text file. You put in it whatever data you think will help you answer the question. Just no job numbers data allowed.
+Q: Does the presidents.txt file have to be a CSV file?
+A: No. It can be, if you want it to.
+Q: I can answer this question using Excel. Why do we need a Python program to do this?
+A: The simple answer is automation. Yes you could figure out a way to do this in Excel without much programming once.
+But what if you wanted to answer this kind of question over and over? Doing it manually is tedious and error prone.
+Q: Why are you asking us to verify the input data that you give us? Is this a trick?
+A: Any time someone makes a claim based on data they give you, you should attempt to verify that the data is correct and hasn’t been tampered with.
+Q: I think I’m doing everything right but my numbers don’t add up. I don’t see how Clinton could possibly have been right, though I’m not saying he was or wasn’t. Any suggestions?
+A: Review the description. Check your assumptions about the data and the question and the problem.
+Q: Personally, I don’t like President Clinton, so he must have been wrong. Why did you ask such a controversial question?
+A: Controversy is part of what makes the problem interesting. Your feelings about him as a person or a president have nothing
+to do with data and facts. Answer the question based on the data.
+Q: Personally, I think President Clinton was a good president, and he must have been right. Why did you ask such a controversial question?
+A: Controversy is part of what makes the problem interesting. Your feelings about him as a person or a president have nothing
+to do with data and facts. Answer the question based on the data.
+Q: Is there a right answer?
+A: Yes there is, but this project is about much more than just the answer.
