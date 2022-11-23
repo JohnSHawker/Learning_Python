@@ -15,5 +15,5 @@ kilotomile = kilometers / 1.609344
 secpermile = kilotomile / totalseconds
 
 
-print(f"There are {totalseconds} in {minutes} minutes and {seconds} seconds.")
+print(f"There are {totalseconds} seconds in {minutes} minutes and {seconds} seconds.")
 print(f"There are {kilotomile} miles in {kilometers} kilometers")
