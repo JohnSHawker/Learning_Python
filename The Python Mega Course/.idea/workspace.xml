@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0242d0a-b960-4ccf-be03-c9416ea2e368" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Bonus/bonus4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bug-Fixing Exercises/bfex11.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bug-Fixing Exercises/bfex12.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercise/ex10.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercise/ex11.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercise/ex9.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a0242d0a-b960-4ccf-be03-c9416ea2e368" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,6 +206,7 @@
       <workItem from="1676141564941" duration="611000" />
       <workItem from="1676749647239" duration="1788000" />
       <workItem from="1677614272242" duration="4590000" />
+      <workItem from="1678388005338" duration="497000" />
     </task>
     <servers />
   </component>
