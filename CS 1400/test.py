@@ -1,11 +1,4 @@
-def grid(rows, columns):
-    row = 0
-    column = 0
-    for row in range(rows):
-        for column in range(columns):
-            print('+', '-', '-', '-', '-', end= ' ')
-            column += 1
-        print('+')
-        print("|", " ", " ", " ", " ", )
+import csv
 
-grid(rows = int(input("How many rows? ")), columns = int(input("How many columns? ")))
+def do_research(number_of_cages, number_of_adults_first_month, number_of_babies_first_month):
+  

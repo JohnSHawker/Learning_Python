@@ -50,9 +50,9 @@ def main():
         return
 
     turtle.screensize(canvwidth = width, canvheight = height)
-    triangle(60, "red")
-    square(120, "yellow")
-    circle(240, "blue")
+    triangle(20, "red")
+    square(20, "yellow")
+    circle(20, "blue")
 
 if __name__ == "__main__":
     my_turtle = turtle.Turtle()

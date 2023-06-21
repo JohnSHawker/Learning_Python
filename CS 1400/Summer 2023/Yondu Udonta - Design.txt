@@ -1,0 +1,51 @@
+1.
+The program should take the user input for the number of Reavers there are and the number of units there are.
+Then the program will calculate the distribution and finally print out how the units will be split between
+Yondu, Quill, the crew, and the RBF.
+
+2. 
+| Input variable name | Type | Example value |
+| --- | --- | --- |
+| number_of_reavers | *int* | 20 |
+| number_of_units | *int* | 1000 |
+
+
+| Outputs | Type | Example value |
+| --- | --- | --- |
+| Yondu's share | *int* | 158 |
+| Peter's share | *int* | 126 |
+| Crew | *int* | 36 |
+| RBF | *int* | 14 |
+
+3.
+# 'input()' function
+The 'input()' function will allow users to pass information into the program.
+# Variables
+Variables will be useful to store and pass information in the program.
+# Arithmetic Operators
+Arithmetic operators will be used in conjunction with with variables and user input to calculate the correct values for our outputs.
+# 'print()' function
+The 'print()' function will be useful to print out the calculated output for unit distribution to the user.
+
+4.
+number_of_reavers = input("How many Reavers: ")
+number_of_units = input("How many units: ")
+crew_leave_cost = (number_of_reavers - 2) * 3
+number_of_units = number_of_units - crew_leave_cost
+yondu_13_percent = number_of_units // (1 / 0.13)
+number_of_units = number_of_units - yondu_13_percent
+peter_11_percent = number_of_units // (1 / 0.11)
+number_of_units = number_of_units - peter_11_percent
+crew_pay = number_of_units // number_of_reavers
+rbf = number_of_units - (number_of_reavers * crew_pay)
+yondu_total = yondu_13_percent + crew_pay
+peter_total = peter_11_percent + crew_pay
+print("Yondu's share:", yondu_total)
+print("Peter's share:", peter_total)
+print("Crew: ", crew_pay)
+print("RBF: ", rbf)
+
+5.
+1. If the unit input to my program is 1000 and the number of Reavers input is 20, then Yondu's portion should be 158 units.
+2. If the unit input to my program is 1000 and the number of Reavers input is 20, then Peter's portion  should be 126 units.
+3. If the unit input to my program is 1000 and the number of Reavers input is 20, then each crew member should get 36 units.
