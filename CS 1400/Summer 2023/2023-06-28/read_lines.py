@@ -9,7 +9,7 @@ foo = Foo(12)
 print(foo.baz())
 print(type(foo))
 print(type(foo.baz()))
-        
+
 test_file = sys.argv[1]
 lin = 0
 characters = 0
