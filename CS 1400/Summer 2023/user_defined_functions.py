@@ -149,23 +149,23 @@ def best_team(file):
 
 # Their answer:
 
-# import csv
+import csv
 
-# mlb_data = "student_folder/.exercises/mlb_data.csv"
+mlb_data = "student_folder/.exercises/mlb_data.csv"
 
-# def best_team(file):
-#     ""Read a CSV of baseball data.
-#     Return the team name with the most wins""
-#     with open(file, "r") as csv_file:
-#         reader = csv.reader(csv_file)
-#         next(reader)
-#         most_wins = 0
-#         best_team = ""
-#         for row in reader:
-#             if int(row[3]) > most_wins:
-#                 most_wins = int(row[3])
-#                 best_team = row[0]
-#         return best_team
+def best_team(file):
+    ""Read a CSV of baseball data.
+    Return the team name with the most wins""
+    with open(file, "r") as csv_file:
+        reader = csv.reader(csv_file)
+        next(reader)
+        most_wins = 0
+        best_team = ""
+        for row in reader:
+            if int(row[3]) > most_wins:
+                most_wins = int(row[3])
+                best_team = row[0]
+        return best_team
 
 
 #------------------------------------------------------------------------------------------
@@ -187,13 +187,13 @@ the auto-grader only works if all of the coding is done inside the is_palindrome
 
 # Their answer:
 
-# def is_palindrome(string):
-#     reversed_string= ""
-#     position = len(string) - 1
-#     while position >= 0:
-#         reversed_string += string[position]
-#         position -= 1
-#     if string == reversed_string:
-#         return True
-#     else:
-#         return False
+def is_palindrome(string):
+    reversed_string= ""
+    position = len(string) - 1
+    while position >= 0:
+        reversed_string += string[position]
+        position -= 1
+    if string == reversed_string:
+        return True
+    else:
+        return False
