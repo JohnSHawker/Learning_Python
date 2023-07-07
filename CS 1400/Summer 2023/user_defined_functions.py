@@ -140,12 +140,22 @@ However, your function will be tested with other CSV files in which different te
 
 import sys
 import os
-import csv
+from csv import DictReader
+
+
+mlb_data = "student_folder/.exercises/mlb_data.csv"
 
 def best_team(file):
-    mlb_data = "student_folder/.exercises/mlb_data.csv"
-    with open(mlb_data, "r") as input_file:
-
+    with open(file, "r") as input_file:
+        reader = DictReader(input_file)
+        most_wins = 0
+        most_wins_row = None
+        for row in reader:
+            if row["W"] > most_wins:
+                print(row)
+                most_wins = row["W"]
+                most_wins_row = row
+        return most_wins_row
 
 # Their answer:
 

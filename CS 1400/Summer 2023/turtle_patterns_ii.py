@@ -128,3 +128,4 @@ def draw(width, height):
     triangle()    
     circle()
 
+draw(100,100)
