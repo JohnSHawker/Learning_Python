@@ -4,7 +4,7 @@ Author: John Hawker
 Due Date: 2023-06-08
 Course: CS1400-X02
 
-User should be asked to input values for the window height and width. 
+User should be asked to input values for the window height and width.
 The turtle window should open to the specified size and draw the atomic shapes.
 '''
 import turtle
@@ -39,7 +39,7 @@ def get_dimensions():
     width = input("Window width > ")
     height = input("Window height > ")
     return width, height
-    
+
 
 
 def draw(width, height):
