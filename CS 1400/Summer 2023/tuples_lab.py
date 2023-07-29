@@ -198,3 +198,19 @@ average_menu_item_rating = round((sum(menu_item_ratings) / len(all_menu_items)\
 print(f"Average Menu Item Ratings: {average_menu_item_rating}")
 
 print(sorted(menu_item_ratings, reverse=True))
+
+# THEIR SOLUTION:
+# all_menu_items = ((sampler, ) + (antipasto_platter, ) + (zuchinni_sticks, ) + (garlic_bread, ) + (bruschetta_trio, ) + (stuffed_portabella, ) + (eggplant_parm_sandwich, ) + (chick_n_caesar_wrap, ) + (italian_deli, ) + (classic_burger, ) + (meatball_on_a_ciabatta, ) + (chick_n_parmesan, ) + (eggplant_parmesan, ) + (lasagna, ) + (spaghetti_meatballs, ) + (tiramisu, ) + (cannoli, ) + (chocolate_cake, ) + (chocolate_almond_croissant, ))
+# print("All Menu Items:", all_menu_items)
+
+# menu_item_ratings_list = [element[6] for element in all_menu_items]
+# menu_item_ratings = tuple(menu_item_ratings_list)
+# print("Menu Item Ratings:", menu_item_ratings)
+
+# average_menu_item_rating = round((sum(menu_item_ratings)/len(menu_item_ratings)), 4)
+# print("Average Menu Item Rating:", average_menu_item_rating)
+
+# THEIR SOLUTION:
+# print("Menu Items Ranked In Order from Best to Worst:\n")
+# for counter_value, (menu_item, menu_item_rating) in enumerate(sorted(zip(menu_items, menu_item_ratings), key = lambda element: element[1], reverse = True), 1):
+#   print(counter_value, ":", menu_item, "with a rating of:", menu_item_rating, ".")
