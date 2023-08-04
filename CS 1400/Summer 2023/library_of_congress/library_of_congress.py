@@ -13,7 +13,7 @@ import sys
 
 
 def parse_line(line):
-    parts = line.split("|")
+    parts = line.strip("\n").split("|")
     text = parts[0]
     pg_num = int(parts[1])
     code = parts[2]
@@ -58,7 +58,6 @@ def library_of_congress(lines):
 def display_results(groups):
     string = ""
     for code, group in groups.items():
-        print(code)
         string += display_group(code, group) + "\n"
     return string
 
@@ -73,10 +72,10 @@ Average length: {average}
 """
 
 def display_novels(groups):
-    string = ""
-    for code, group in groups.items():
-        string += display_novel(code, group) + "-----\n"
-    return string
+    return "-----\n".join([display_novel(code, group) for code, group in groups.items()])
+    # for code, group in groups.items():
+    #     string += display_novel(code, group) + "-----\n"
+    # return string
 
 def display_novel(code, entries):
     string = code + "\n"
@@ -88,31 +87,35 @@ def get_pg_num(entry):
     return entry.get('pg_num')
 
 def find_longest(list_of_entries):
-    longest_entry = None
-    longest_length = 0
+    longest_length = None
     for entry in list_of_entries:
         length_of_text = len(entry['text'])
-        if length_of_text > longest_length:
+        if longest_length is None or length_of_text > longest_length:
+            longest_entry = entry
+            longest_length = length_of_text
+        elif length_of_text == longest_length and entry['pg_num'] > longest_entry['pg_num']:
             longest_entry = entry
             longest_length = length_of_text
     return longest_entry
 
 def find_shortest(list_of_entries):
-    shortest_entry = None
     shortest_length = None
     for entry in list_of_entries:
         length_of_text = len(entry['text'])
         if shortest_length is None or length_of_text < shortest_length:
             shortest_entry = entry
             shortest_length = length_of_text
-        return shortest_entry
+        elif length_of_text == shortest_length and entry['pg_num'] < shortest_entry['pg_num']:
+            shortest_entry = entry
+            shortest_length = length_of_text
+    return shortest_entry
 
 def find_average(list_of_entries):
     length_of_entry = 0
     for entry in list_of_entries:
         length_of_entry = len(entry['text']) + length_of_entry
     average = length_of_entry / (len(list_of_entries))
-    average = int(average)
+    average = round(average)
     return average
 
 def main():
@@ -124,3 +127,5 @@ def main():
             summary_output.write(display_results(groups))
         with open('novel_text.txt', 'w') as text_output:
             text_output.write(display_novels(groups))
+
+main()
